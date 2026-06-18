@@ -2,56 +2,65 @@ import { motion } from "framer-motion";
 import { EASE_OUT } from "../lib/easing";
 
 const BG_IMG =
-  "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?q=80&w=1600&auto=format&fit=crop";
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09 } },
+};
+const staggerItem = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE_OUT } },
+};
 
 const pillars = [
   {
     num: "01",
-    title: "Separate Portfolios",
-    body: "Every registered firm under BGC Holdings holds a fully independent portfolio. Capital is never commingled. Accounting, reporting, and performance tracking are kept distinct for each entity.",
+    title: "Your Money Stays Yours",
+    body: "Your portfolio is 100% separate from every other company under BGC Holdings. Your capital, your records, your results. Nothing is shared or mixed.",
   },
   {
     num: "02",
-    title: "Risk-Tiered Allocation",
-    body: "Capital is deployed across three tiers, low, medium, and high risk — calibrated to match each firm's growth objectives, cash flow needs, and appetite for volatility.",
+    title: "Three Risk Levels",
+    body: "We split every portfolio into three buckets — low risk (safe, steady), medium risk (balanced growth), and high risk (higher reward potential). You decide how much goes into each.",
   },
   {
     num: "03",
-    title: "Active Selection",
-    body: "BGC actively selects across equities, fixed income, private placements, and alternative assets. No passive drift — every position is intentional and monitored.",
+    title: "We Pick Every Investment",
+    body: "We actively choose where your money goes. Stocks, bonds, private placements, alternatives. Every position is intentional and reviewed. Nothing goes in on autopilot.",
   },
   {
     num: "04",
-    title: "Quarterly Reporting",
-    body: "Each firm receives quarterly performance reports, risk analytics, and reinvestment recommendations. Transparency is a structural commitment, not a courtesy.",
+    title: "Clear Quarterly Reports",
+    body: "Every three months, you get a straightforward breakdown — what's in your portfolio, how it performed, and exactly what we're recommending next. No finance jargon.",
   },
   {
     num: "05",
-    title: "Regulatory Compliance",
-    body: "Operating under the LLC structure, BGC builds its compliance framework ahead of client onboarding, meeting Nigerian regulatory requirements and preparing for cross-border investment mandates.",
+    title: "Built to Be Compliant",
+    body: "We're constructing our framework to meet Nigerian financial regulations from the start — and preparing for cross-border investment mandates as we grow.",
   },
   {
     num: "06",
-    title: "Long-Term Orientation",
-    body: "BGC is not built for quarterly wins. Our frameworks favour compounding, capital preservation, and opportunistic reinvestment over time horizons that allow ideas to mature.",
+    title: "We Think Long-Term",
+    body: "We're not chasing this quarter's gains. We build portfolios that compound steadily over years. Patient money grows. That's the philosophy.",
   },
 ];
 
 const roadmap = [
   {
     phase: "Phase 1 · Now",
-    label: "Framework Build",
-    desc: "Investment policy statements, compliance processes, reporting templates, and the pilot portfolio for SYS Empire.",
+    label: "Getting Set Up Right",
+    desc: "Building our investment framework, compliance processes, and the pilot portfolio for SYS Empire. No shortcuts.",
   },
   {
     phase: "Phase 2 · 12 Months",
-    label: "Client Growth",
-    desc: "Onboard 3–5 registered firms. Refine proprietary reporting tools. Expand cross-border investment access.",
+    label: "Growing Our Client List",
+    desc: "Onboarding 3–5 registered companies. Refining our reporting tools. Expanding what we can invest in, including cross-border.",
   },
   {
     phase: "Phase 3 · 3–5 Years",
-    label: "Multi-Jurisdictional",
-    desc: "Establish BGC as a recognised multi-jurisdictional fund manager. Pursue selective external capital partnerships.",
+    label: "Going Multi-Jurisdictional",
+    desc: "Managing funds across borders. Becoming a recognised name in professional fund management for affiliated firms.",
   },
 ];
 
@@ -60,33 +69,36 @@ export default function Strategy() {
     <>
       {/* Hero */}
       <section className="relative h-[65vh] overflow-hidden flex items-end">
-        <img
+        <motion.img
           src={BG_IMG}
           alt="Strategy"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "grayscale(30%)" }}
+          initial={{ scale: 1.06 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.4, ease: EASE_OUT }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.5) 100%)",
+              "linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.85) 30%, rgba(10,10,10,0.3) 100%)",
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-24 w-full">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: EASE_OUT }}
+            transition={{ duration: 0.7, delay: 0.15, ease: EASE_OUT }}
             className="text-[11px] tracking-[0.4em] uppercase mb-4"
             style={{ color: "var(--silver-dim)" }}
           >
-            Investment Philosophy
+            How We Work
           </motion.p>
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease: EASE_OUT }}
+            transition={{ duration: 0.9, delay: 0.3, ease: EASE_OUT }}
             className="text-6xl md:text-8xl font-light text-white leading-none"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
@@ -108,37 +120,41 @@ export default function Strategy() {
             className="text-4xl md:text-5xl font-light text-white leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Disciplined. Transparent. Built for affiliated firms.
+            No jargon. No black boxes. Just a clear system.
           </h2>
           <p className="text-white/40 text-sm leading-loose self-center">
-            BGC Holdings does not manage external money. We manage capital for
-            firms registered directly under the holding company — giving each
-            one access to institutional-grade portfolio management while keeping
-            their books completely separate. Our strategy is not a product of
-            market fashion. It is a framework built to last.
+            BGC Holdings doesn't manage external money or sell investment
+            products. We manage capital for companies registered directly under
+            the holding company — giving each one access to serious portfolio
+            management, with their books kept completely separate. It's
+            straightforward by design.
           </p>
         </motion.div>
 
         {/* Pillars */}
-        <div
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-px"
           style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
         >
-          {pillars.map(({ num, title, body }, i) => (
+          {pillars.map(({ num, title, body }) => (
             <motion.div
               key={num}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.7, ease: EASE_OUT }}
-              className="p-10 group hover:bg-white/2 transition-colors duration-500"
+              variants={staggerItem}
+              className="p-10 group cursor-default"
               style={{ backgroundColor: "var(--dark)" }}
+              whileHover={{
+                backgroundColor: "rgba(255,255,255,0.025)",
+                y: -4,
+                transition: { duration: 0.25 },
+              }}
             >
-              <p className="text-xs tracking-widest mb-6 text-white/25">
-                {num}
-              </p>
+              <p className="text-xs tracking-widest mb-6 text-white/20">{num}</p>
               <h3
-                className="text-xl font-light text-white/80 mb-4 group-hover:text-white transition-colors duration-300"
+                className="text-xl font-light text-white/75 mb-4 group-hover:text-white transition-colors duration-300"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {title}
@@ -146,7 +162,7 @@ export default function Strategy() {
               <p className="text-white/35 text-sm leading-relaxed">{body}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Roadmap */}
@@ -169,29 +185,34 @@ export default function Strategy() {
               className="text-[11px] tracking-[0.4em] uppercase mb-4"
               style={{ color: "var(--silver-dim)" }}
             >
-              Roadmap
+              Where We're Headed
             </p>
             <h2
               className="text-4xl font-light text-white"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Where we are headed
+              A clear roadmap, honestly stated.
             </h2>
           </motion.div>
 
-          <div
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
             className="grid md:grid-cols-3 gap-px"
             style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
           >
-            {roadmap.map(({ phase, label, desc }, i) => (
+            {roadmap.map(({ phase, label, desc }) => (
               <motion.div
                 key={phase}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12, duration: 0.7, ease: EASE_OUT }}
+                variants={staggerItem}
                 className="p-10"
                 style={{ backgroundColor: "var(--dark-2)" }}
+                whileHover={{
+                  backgroundColor: "rgba(255,255,255,0.02)",
+                  transition: { duration: 0.25 },
+                }}
               >
                 <p className="text-[10px] tracking-[0.3em] uppercase text-white/25 mb-4">
                   {phase}
@@ -205,7 +226,7 @@ export default function Strategy() {
                 <p className="text-white/35 text-sm leading-relaxed">{desc}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
