@@ -13,7 +13,7 @@ const pillars = [
   {
     num: "02",
     title: "Risk-Tiered Allocation",
-    body: "Capital is deployed across three tiers — low, medium, and high risk — calibrated to match each firm's growth objectives, cash flow needs, and appetite for volatility.",
+    body: "Capital is deployed across three tiers, low, medium, and high risk — calibrated to match each firm's growth objectives, cash flow needs, and appetite for volatility.",
   },
   {
     num: "03",
@@ -28,7 +28,7 @@ const pillars = [
   {
     num: "05",
     title: "Regulatory Compliance",
-    body: "Operating under the LLC structure, BGC builds its compliance framework ahead of client onboarding — meeting Nigerian regulatory requirements and preparing for cross-border investment mandates.",
+    body: "Operating under the LLC structure, BGC builds its compliance framework ahead of client onboarding, meeting Nigerian regulatory requirements and preparing for cross-border investment mandates.",
   },
   {
     num: "06",
