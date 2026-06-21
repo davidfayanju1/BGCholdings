@@ -75,12 +75,12 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-24 w-full"
+          className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-16 sm:pb-20 lg:pb-24 w-full"
           style={{ opacity: heroOpacity }}
         >
           <motion.p
             {...fadeIn(0.2)}
-            className="text-[11px] tracking-[0.4em] uppercase mb-6"
+            className="text-[11px] tracking-[0.4em] uppercase mb-4 sm:mb-6"
             style={{ color: "var(--silver-dim)" }}
           >
             Nigeria · Fund Management
@@ -88,7 +88,7 @@ export default function Home() {
 
           <motion.h1
             {...fadeIn(0.35)}
-            className="text-5xl sm:text-6xl md:text-8xl font-light leading-[1.05] mb-8 text-white"
+            className="text-4xl sm:text-5xl md:text-6xl xl:text-8xl font-light leading-[1.05] mb-5 sm:mb-8 text-white"
             style={{
               fontFamily: "'Playfair Display', serif",
               letterSpacing: "-0.02em",
@@ -103,7 +103,7 @@ export default function Home() {
 
           <motion.p
             {...fadeIn(0.55)}
-            className="text-white/55 text-base sm:text-lg max-w-lg leading-relaxed mb-12"
+            className="text-white/55 text-sm sm:text-base lg:text-lg max-w-lg leading-relaxed mb-8 sm:mb-12"
           >
             BGC Holdings takes profits from companies registered under us and
             puts them into structured, risk-managed investments. Your books stay

@@ -48,8 +48,8 @@ export default function Nav() {
             to="/"
             className="flex flex-col leading-none select-none group"
           >
-            {/* <span
-              className="text-2xl tracking-widest uppercase text-white transition-colors duration-300 group-hover:text-[var(--silver)]"
+            <span
+              className="text-2xl uppercase text-white transition-colors duration-300 group-hover:text-[var(--silver)]"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 500,
@@ -62,9 +62,9 @@ export default function Nav() {
               style={{ color: "var(--silver-dim)" }}
             >
               Holdings
-            </span> */}
+            </span>
 
-            <img src="/images/company_logo.png" alt="" className="h-20" />
+            {/* <img src="/images/company_logo.png" alt="" className="h-20" /> */}
           </NavLink>
 
           {/* Desktop links */}
